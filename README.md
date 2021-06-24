@@ -1,19 +1,51 @@
 xplr plugin template
 ====================
 
-Use this template to
-[create your own xplr plugin](https://arijitbasu.in/xplr/en/writing-plugins.html).
+Use this template to [write your own xplr plugin](https://arijitbasu.in/xplr/en/writing-plugins.html).
 
 
-How to use
-----------
+Requirements
+------------
 
-Visit
-[Creating a repository from a template](https://docs.github.com/en/articles/creating-a-repository-from-a-template)
-and follow the instructions.
+- Some tool
 
 
-Examples
+Installation
+------------
+
+### Install manually
+
+- Add the following line in `~/.config/xplr/init.lua`
+
+  ```lua
+  package.path = os.getenv("HOME") .. '/.config/xplr/plugins/?/src/init.lua'
+  ```
+
+- Clone the plugin
+
+  ```bash
+  mkdir -p ~/.config/xplr/plugins
+
+  git clone https://github.com/me/{plugin}.xplr ~/.config/xplr/plugins/{plugin}
+  ```
+
+- Require the module in `~/.config/xplr/init.lua`
+
+  ```lua
+  require("{plugin}").setup()
+  
+  -- Or
+  
+  require("{fzf}").setup{
+    mode = "action",
+    key = ":",
+  }
+
+  -- Type `::` and chill
+  ```
+
+
+Features
 --------
 
-Visit [Awesome Plugins](https://arijitbasu.in/xplr/en/awesome-plugins.html).
+- Some cool feature
