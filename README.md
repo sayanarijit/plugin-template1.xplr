@@ -36,7 +36,7 @@ Installation
   
   -- Or
   
-  require("{fzf}").setup{
+  require("{plugin}").setup{
     mode = "action",
     key = ":",
   }
