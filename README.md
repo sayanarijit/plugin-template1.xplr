@@ -41,7 +41,7 @@ Installation
     key = ":",
   }
 
-  -- Type `::` and chill
+  -- Type `::` and enjoy.
   ```
 
 
