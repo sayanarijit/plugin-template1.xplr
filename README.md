@@ -1,24 +1,27 @@
-xplr plugin template
-====================
+# xplr plugin template
 
 Use this template to [write your own xplr plugin](https://arijitbasu.in/xplr/en/writing-plugins.html).
 
+> **NOTE:** The `src` directory is a symlink to `.` for compatibility reasons.
+> It may be removed in the future.
 
-Requirements
-------------
+## Requirements
 
 - Some tool
 
-
-Installation
-------------
+## Installation
 
 ### Install manually
 
 - Add the following line in `~/.config/xplr/init.lua`
 
   ```lua
-  package.path = os.getenv("HOME") .. '/.config/xplr/plugins/?/src/init.lua'
+  local home = os.getenv("HOME")
+  package.path = home
+    .. "/.config/xplr/plugins/?/src/init.lua;"
+    .. home
+    .. "/.config/xplr/plugins/?.lua;"
+    .. package.path
   ```
 
 - Clone the plugin
@@ -26,16 +29,16 @@ Installation
   ```bash
   mkdir -p ~/.config/xplr/plugins
 
-  git clone https://github.com/me/{plugin}.xplr ~/.config/xplr/plugins/{plugin}
+  git clone https://github.com/{username}/{plugin}.xplr ~/.config/xplr/plugins/{plugin}
   ```
 
 - Require the module in `~/.config/xplr/init.lua`
 
   ```lua
   require("{plugin}").setup()
-  
+
   -- Or
-  
+
   require("{plugin}").setup{
     mode = "action",
     key = ":",
@@ -44,8 +47,6 @@ Installation
   -- Type `::` and enjoy.
   ```
 
-
-Features
---------
+## Features
 
 - Some cool feature
