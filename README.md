@@ -18,7 +18,7 @@ Use this template to [write your own xplr plugin](https://arijitbasu.in/xplr/en/
   ```lua
   local home = os.getenv("HOME")
   package.path = home
-    .. "/.config/xplr/plugins/?/src/init.lua;"
+    .. "/.config/xplr/plugins/?/init.lua;"
     .. home
     .. "/.config/xplr/plugins/?.lua;"
     .. package.path
